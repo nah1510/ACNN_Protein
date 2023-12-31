@@ -60,7 +60,6 @@ lingadInfo = Table (
     Column('molecular_weight', String(255)),
     Column('lingad_type', String(255)),
     Column('additional_info', TEXT),
-    Column('image_url', TEXT),
 )
 
 proteinInfo = Table (
@@ -68,7 +67,6 @@ proteinInfo = Table (
     Column('id', Integer, primary_key=True),
     Column('name', String(255)),
     Column('additional_info', TEXT),
-    Column('image_url', TEXT),
 )
 
 # Create an engine and bind it to the metadata
@@ -198,7 +196,6 @@ def ligand():
         molecular_weight = request.form['molecular_weight']
         lingad_type = request.form['lingad_type']
         additional_info = request.form['additional_info']
-        image_url = request.form['image_url']
         
         new_data = LingadInfo(
             code=code,
@@ -208,7 +205,6 @@ def ligand():
             molecular_weight=molecular_weight,
             lingad_type=lingad_type,
             additional_info=additional_info,
-            image_url=image_url
         )
 
         db.session.add(new_data)
@@ -231,12 +227,10 @@ def protein():
     if request.method == 'POST':
         name = request.form['name']
         additional_info = request.form['additional_info']
-        image_url = request.form['image_url']
         
         new_data = ProteinInfo(
             name=name,
             additional_info=additional_info,
-            image_url=image_url
         )
 
         db.session.add(new_data)

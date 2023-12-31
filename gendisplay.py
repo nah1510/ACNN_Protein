@@ -29,7 +29,7 @@ import nglview
 from deepchem.utils.vina_utils import prepare_inputs
 from IPython.display import display, Image
 
-for i in range(171, len(raw_dataset)): 
+for i in range(1, len(raw_dataset)): 
     pdbid = raw_dataset['pdb_id'].iloc[i]
     ligand = raw_dataset['smiles'].iloc[i]
     

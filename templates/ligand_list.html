@@ -49,7 +49,6 @@
                     <th scope="col">Molecular Weight</th>
                     <th scope="col">Ligand Type</th>
                     <th scope="col">Additional Info</th>
-                    <th scope="col">Image</th>
                 </tr>
             </thead>
             <tbody>
@@ -62,7 +61,6 @@
                     <td>{{ ligand.molecular_weight }}</td>
                     <td>{{ ligand.lingad_type }}</td>
                     <td>{{ ligand.additional_info }}</td>
-                    <td><img src="{{ ligand.image_url }}" alt="Ligand Image" style="max-height: 50px;"></td>
                 </tr>
                 {% endfor %}
             </tbody>
